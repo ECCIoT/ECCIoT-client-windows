@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using ECC_client_windows.UserControls;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,9 @@ namespace ECC_client_windows.Form
             InitializeComponent();
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            metroButton1.Height += 2;
+            ecciotListBox.AddItem(new EcciotListItem());
         }
     }
 }
