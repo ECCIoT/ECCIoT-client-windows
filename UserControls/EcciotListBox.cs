@@ -13,12 +13,16 @@ namespace ECC_client_windows.UserControls
 {
     public partial class EcciotListBox : MetroUserControl
     {
-        EcciotListRefreshManager refreshManager = new EcciotListRefreshManager();
+        private EcciotListRefreshManager refreshManager = new EcciotListRefreshManager();
+        public EcciotListRefreshManager RefreshManager
+        {
+            get { return refreshManager; }
+        }
+
 
         public EcciotListBox()
         {
             InitializeComponent();
-            
         }
 
         public void AddItem(EcciotListItem item)
@@ -34,8 +38,10 @@ namespace ECC_client_windows.UserControls
             item.UseSelectable = true;
 
             //添加EcciotListRefreshManager
-            item.RefreshManager = this.refreshManager;
-
+            if (!RefreshManager.Items.Contains(item))
+            {
+                item.RefreshManager = this.refreshManager;
+            }
         }
 
         private void tlp_Paint(object sender, PaintEventArgs e)

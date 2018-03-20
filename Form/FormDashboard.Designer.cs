@@ -30,12 +30,12 @@
         {
             this.mtab = new MetroFramework.Controls.MetroTabControl();
             this.mtpDashbard = new MetroFramework.Controls.MetroTabPage();
+            this.tlpDashboard = new System.Windows.Forms.TableLayoutPanel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.mpanelListBox = new MetroFramework.Controls.MetroPanel();
             this.mtpDataView = new MetroFramework.Controls.MetroTabPage();
             this.mtpSettings = new MetroFramework.Controls.MetroTabPage();
-            this.tlpDashboard = new System.Windows.Forms.TableLayoutPanel();
-            this.mpanelListBox = new MetroFramework.Controls.MetroPanel();
             this.ecciotListBox = new ECC_client_windows.UserControls.EcciotListBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.mtab.SuspendLayout();
             this.mtpDashbard.SuspendLayout();
             this.tlpDashboard.SuspendLayout();
@@ -51,7 +51,7 @@
             this.mtab.Location = new System.Drawing.Point(20, 60);
             this.mtab.Name = "mtab";
             this.mtab.SelectedIndex = 0;
-            this.mtab.Size = new System.Drawing.Size(1150, 567);
+            this.mtab.Size = new System.Drawing.Size(1050, 773);
             this.mtab.TabIndex = 0;
             this.mtab.UseSelectable = true;
             // 
@@ -63,12 +63,59 @@
             this.mtpDashbard.HorizontalScrollbarSize = 10;
             this.mtpDashbard.Location = new System.Drawing.Point(4, 38);
             this.mtpDashbard.Name = "mtpDashbard";
-            this.mtpDashbard.Size = new System.Drawing.Size(1142, 525);
+            this.mtpDashbard.Size = new System.Drawing.Size(1042, 731);
             this.mtpDashbard.TabIndex = 0;
             this.mtpDashbard.Text = "Dashboard";
             this.mtpDashbard.VerticalScrollbarBarColor = true;
             this.mtpDashbard.VerticalScrollbarHighlightOnWheel = false;
             this.mtpDashbard.VerticalScrollbarSize = 10;
+            // 
+            // tlpDashboard
+            // 
+            this.tlpDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpDashboard.ColumnCount = 2;
+            this.tlpDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDashboard.Controls.Add(this.metroButton1, 0, 0);
+            this.tlpDashboard.Controls.Add(this.mpanelListBox, 0, 0);
+            this.tlpDashboard.Location = new System.Drawing.Point(3, 3);
+            this.tlpDashboard.Name = "tlpDashboard";
+            this.tlpDashboard.RowCount = 1;
+            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpDashboard.Size = new System.Drawing.Size(1039, 725);
+            this.tlpDashboard.TabIndex = 2;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(574, 3);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(142, 56);
+            this.metroButton1.TabIndex = 9;
+            this.metroButton1.Text = "添加一个测试项";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
+            // mpanelListBox
+            // 
+            this.mpanelListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mpanelListBox.AutoScroll = true;
+            this.mpanelListBox.Controls.Add(this.ecciotListBox);
+            this.mpanelListBox.HorizontalScrollbar = true;
+            this.mpanelListBox.HorizontalScrollbarBarColor = true;
+            this.mpanelListBox.HorizontalScrollbarHighlightOnWheel = false;
+            this.mpanelListBox.HorizontalScrollbarSize = 10;
+            this.mpanelListBox.Location = new System.Drawing.Point(3, 3);
+            this.mpanelListBox.Name = "mpanelListBox";
+            this.mpanelListBox.Size = new System.Drawing.Size(565, 722);
+            this.mpanelListBox.TabIndex = 8;
+            this.mpanelListBox.VerticalScrollbar = true;
+            this.mpanelListBox.VerticalScrollbarBarColor = true;
+            this.mpanelListBox.VerticalScrollbarHighlightOnWheel = false;
+            this.mpanelListBox.VerticalScrollbarSize = 10;
             // 
             // mtpDataView
             // 
@@ -77,7 +124,7 @@
             this.mtpDataView.HorizontalScrollbarSize = 10;
             this.mtpDataView.Location = new System.Drawing.Point(4, 38);
             this.mtpDataView.Name = "mtpDataView";
-            this.mtpDataView.Size = new System.Drawing.Size(1142, 525);
+            this.mtpDataView.Size = new System.Drawing.Size(1042, 731);
             this.mtpDataView.TabIndex = 1;
             this.mtpDataView.Text = "Data Charts";
             this.mtpDataView.VerticalScrollbarBarColor = true;
@@ -91,45 +138,12 @@
             this.mtpSettings.HorizontalScrollbarSize = 10;
             this.mtpSettings.Location = new System.Drawing.Point(4, 38);
             this.mtpSettings.Name = "mtpSettings";
-            this.mtpSettings.Size = new System.Drawing.Size(1142, 525);
+            this.mtpSettings.Size = new System.Drawing.Size(1042, 731);
             this.mtpSettings.TabIndex = 2;
             this.mtpSettings.Text = "Settings";
             this.mtpSettings.VerticalScrollbarBarColor = true;
             this.mtpSettings.VerticalScrollbarHighlightOnWheel = false;
             this.mtpSettings.VerticalScrollbarSize = 10;
-            // 
-            // tlpDashboard
-            // 
-            this.tlpDashboard.ColumnCount = 2;
-            this.tlpDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDashboard.Controls.Add(this.metroButton1, 0, 0);
-            this.tlpDashboard.Controls.Add(this.mpanelListBox, 0, 0);
-            this.tlpDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpDashboard.Location = new System.Drawing.Point(0, 0);
-            this.tlpDashboard.Name = "tlpDashboard";
-            this.tlpDashboard.RowCount = 1;
-            this.tlpDashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDashboard.Size = new System.Drawing.Size(1142, 525);
-            this.tlpDashboard.TabIndex = 2;
-            // 
-            // mpanelListBox
-            // 
-            this.mpanelListBox.AutoScroll = true;
-            this.mpanelListBox.Controls.Add(this.ecciotListBox);
-            this.mpanelListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mpanelListBox.HorizontalScrollbar = true;
-            this.mpanelListBox.HorizontalScrollbarBarColor = true;
-            this.mpanelListBox.HorizontalScrollbarHighlightOnWheel = false;
-            this.mpanelListBox.HorizontalScrollbarSize = 10;
-            this.mpanelListBox.Location = new System.Drawing.Point(3, 3);
-            this.mpanelListBox.Name = "mpanelListBox";
-            this.mpanelListBox.Size = new System.Drawing.Size(565, 519);
-            this.mpanelListBox.TabIndex = 8;
-            this.mpanelListBox.VerticalScrollbar = true;
-            this.mpanelListBox.VerticalScrollbarBarColor = true;
-            this.mpanelListBox.VerticalScrollbarHighlightOnWheel = false;
-            this.mpanelListBox.VerticalScrollbarSize = 10;
             // 
             // ecciotListBox
             // 
@@ -138,26 +152,16 @@
             this.ecciotListBox.AutoSize = true;
             this.ecciotListBox.Location = new System.Drawing.Point(3, 3);
             this.ecciotListBox.Name = "ecciotListBox";
-            this.ecciotListBox.Size = new System.Drawing.Size(540, 333);
+            this.ecciotListBox.Size = new System.Drawing.Size(547, 333);
             this.ecciotListBox.TabIndex = 2;
             this.ecciotListBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.ecciotListBox.UseSelectable = true;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(574, 3);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(142, 56);
-            this.metroButton1.TabIndex = 9;
-            this.metroButton1.Text = "添加一个测试项";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
             // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 647);
+            this.ClientSize = new System.Drawing.Size(1090, 853);
             this.Controls.Add(this.mtab);
             this.Name = "FormDashboard";
             this.Text = "ECCIoT Client for Windows";
@@ -173,12 +177,12 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl mtab;
-        private MetroFramework.Controls.MetroTabPage mtpDashbard;
         private MetroFramework.Controls.MetroTabPage mtpDataView;
         private MetroFramework.Controls.MetroTabPage mtpSettings;
         private System.Windows.Forms.TableLayoutPanel tlpDashboard;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroPanel mpanelListBox;
         private UserControls.EcciotListBox ecciotListBox;
+        private MetroFramework.Controls.MetroTabPage mtpDashbard;
     }
 }

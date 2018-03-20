@@ -32,26 +32,26 @@
             MetroFramework.Controls.MetroLabel metroLabel2;
             MetroFramework.Controls.MetroLabel metroLabel3;
             System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-            this.sc = new System.Windows.Forms.SplitContainer();
             this.pic = new System.Windows.Forms.PictureBox();
             this.scText = new System.Windows.Forms.SplitContainer();
             this.mlabName = new MetroFramework.Controls.MetroLabel();
             this.mbtn = new MetroFramework.Controls.MetroButton();
+            this.sc = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.metroTrackBar1 = new MetroFramework.Controls.MetroTrackBar();
             metroLabel1 = new MetroFramework.Controls.MetroLabel();
             metroLabel2 = new MetroFramework.Controls.MetroLabel();
             metroLabel3 = new MetroFramework.Controls.MetroLabel();
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.sc)).BeginInit();
-            this.sc.Panel1.SuspendLayout();
-            this.sc.Panel2.SuspendLayout();
-            this.sc.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scText)).BeginInit();
             this.scText.Panel1.SuspendLayout();
             this.scText.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sc)).BeginInit();
+            this.sc.Panel1.SuspendLayout();
+            this.sc.Panel2.SuspendLayout();
+            this.sc.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,27 +91,6 @@
             metroLabel3.Text = "metroLabel3";
             metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sc
-            // 
-            this.sc.BackColor = System.Drawing.Color.Transparent;
-            this.sc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sc.Location = new System.Drawing.Point(0, 0);
-            this.sc.Name = "sc";
-            this.sc.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // sc.Panel1
-            // 
-            this.sc.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.sc.Panel1.Controls.Add(tableLayoutPanel1);
-            // 
-            // sc.Panel2
-            // 
-            this.sc.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.sc.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.sc.Size = new System.Drawing.Size(250, 293);
-            this.sc.SplitterDistance = 100;
-            this.sc.TabIndex = 0;
-            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -127,7 +106,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(250, 100);
+            tableLayoutPanel1.Size = new System.Drawing.Size(268, 100);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // pic
@@ -156,7 +135,7 @@
             // scText.Panel2
             // 
             this.scText.Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.scText.Size = new System.Drawing.Size(95, 94);
+            this.scText.Size = new System.Drawing.Size(113, 94);
             this.scText.SplitterDistance = 31;
             this.scText.TabIndex = 2;
             // 
@@ -167,7 +146,7 @@
             this.mlabName.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.mlabName.Location = new System.Drawing.Point(0, 0);
             this.mlabName.Name = "mlabName";
-            this.mlabName.Size = new System.Drawing.Size(95, 31);
+            this.mlabName.Size = new System.Drawing.Size(113, 31);
             this.mlabName.TabIndex = 2;
             this.mlabName.Text = "设备名称";
             this.mlabName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,12 +158,33 @@
             this.mbtn.BackColor = System.Drawing.Color.Transparent;
             this.mbtn.BackgroundImage = global::ECC_client_windows.Properties.Resources.img_dowm;
             this.mbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.mbtn.Location = new System.Drawing.Point(210, 3);
+            this.mbtn.Location = new System.Drawing.Point(228, 3);
             this.mbtn.Name = "mbtn";
             this.mbtn.Size = new System.Drawing.Size(37, 94);
             this.mbtn.TabIndex = 3;
             this.mbtn.UseSelectable = true;
             this.mbtn.Click += new System.EventHandler(this.mbtn_Click);
+            // 
+            // sc
+            // 
+            this.sc.BackColor = System.Drawing.Color.Transparent;
+            this.sc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sc.Location = new System.Drawing.Point(0, 0);
+            this.sc.Name = "sc";
+            this.sc.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // sc.Panel1
+            // 
+            this.sc.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.sc.Panel1.Controls.Add(tableLayoutPanel1);
+            // 
+            // sc.Panel2
+            // 
+            this.sc.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.sc.Panel2.Controls.Add(this.tableLayoutPanel2);
+            this.sc.Size = new System.Drawing.Size(268, 293);
+            this.sc.SplitterDistance = 100;
+            this.sc.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -205,7 +205,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(230, 124);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(248, 124);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // metroTrackBar1
@@ -214,7 +214,7 @@
             this.metroTrackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTrackBar1.Location = new System.Drawing.Point(103, 3);
             this.metroTrackBar1.Name = "metroTrackBar1";
-            this.metroTrackBar1.Size = new System.Drawing.Size(124, 34);
+            this.metroTrackBar1.Size = new System.Drawing.Size(142, 34);
             this.metroTrackBar1.TabIndex = 3;
             this.metroTrackBar1.Text = "metroTrackBar1";
             // 
@@ -225,17 +225,18 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.sc);
             this.Name = "EcciotListItem";
-            this.Size = new System.Drawing.Size(250, 103);
+            this.Size = new System.Drawing.Size(268, 103);
+            this.Load += new System.EventHandler(this.EcciotListItem_Load);
             this.SizeChanged += new System.EventHandler(this.EcciotListItem_SizeChanged);
-            this.sc.Panel1.ResumeLayout(false);
-            this.sc.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sc)).EndInit();
-            this.sc.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.scText.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scText)).EndInit();
             this.scText.ResumeLayout(false);
+            this.sc.Panel1.ResumeLayout(false);
+            this.sc.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sc)).EndInit();
+            this.sc.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -247,9 +248,9 @@
         private System.Windows.Forms.SplitContainer sc;
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.SplitContainer scText;
-        private MetroFramework.Controls.MetroLabel mlabName;
         private MetroFramework.Controls.MetroButton mbtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MetroFramework.Controls.MetroTrackBar metroTrackBar1;
+        private MetroFramework.Controls.MetroLabel mlabName;
     }
 }
