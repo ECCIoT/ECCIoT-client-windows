@@ -22,6 +22,9 @@ namespace ECC_client_windows.UserControls
             set { refreshManager = value; }
         }
 
+        //列表项信息
+        private ItemInfo Info { get; set; }
+
         //控件高度伸展的目标值
         private int targetHeight = 0;
         public int TargetHeight
@@ -38,9 +41,10 @@ namespace ECC_client_windows.UserControls
         //单次变化的最大比例
         private const float maxChangeProportion = 0.35f;
 
-        public EcciotListItem()
+        public EcciotListItem(ItemInfo info)
         {
             InitializeComponent();
+            Info = info;
         }
 
         private void EcciotListItem_Load(object sender, EventArgs e)
@@ -49,11 +53,24 @@ namespace ECC_client_windows.UserControls
             sc.SplitterDistance = this.Height;
             sc.Height = this.Height + i;
 
+            //加载信息
+            LoadInfo();
         }
 
-        public void ShowBasicItem()
+        /// <summary>
+        /// 显示基本界面
+        /// </summary>
+        public void ShowMinItem()
         {
             TargetHeight = sc.SplitterDistance;
+        }
+
+        /// <summary>
+        /// 显示完整界面
+        /// </summary>
+        public void ShowMaxItem()
+        {
+            TargetHeight = sc.Height;
         }
 
         public void DeleteItem()
@@ -61,9 +78,12 @@ namespace ECC_client_windows.UserControls
             TargetHeight = 0;
         }
 
-        public void ShowAllItem()
+        /// <summary>
+        /// 加载信息
+        /// </summary>
+        private void LoadInfo()
         {
-            TargetHeight = sc.Height;
+            mlabName.Text = Info.Name;
         }
 
         /// <summary>
@@ -101,44 +121,74 @@ namespace ECC_client_windows.UserControls
             pic.Width = pic.Height;
         }
 
-        private void mbtn_Click(object sender, EventArgs e)
+        private void Mbtn_Click(object sender, EventArgs e)
         {
             //转变运动方向
             if (TargetHeight == sc.Height)
             {
-                ShowBasicItem();
+                ShowMinItem();
             }
             else
             {
-                ShowAllItem();
+                ShowMaxItem();
             }
+        }
+
+        /// <summary>
+        /// 设备信息类
+        /// 可直接通过Json.net库进行序列化和反序列化
+        /// ItemInfo info = JsonConvert.DeserializeObject<ItemInfo>(json);
+        /// </summary>
+        public class ItemInfo
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public string Model { get; set; }
         }
     }
 
+    /// <summary>
+    /// AT指令构造工具类
+    /// </summary>
     public class ATCommand
     {
         public string Command { get; private set; }
         public byte ParamCount{ get; private set; }
 
+        /// <summary>
+        /// 构造方法
+        /// </summary>
+        /// <param name="CommandName">AT指令名称</param>
+        /// <param name="ParamCount">指令标准参数个数</param>
         ATCommand(string CommandName, byte ParamCount)
         {
             this.Command = CommandName;
             this.ParamCount = ParamCount;
         }
 
+        /// <summary>
+        /// 构造AT指令
+        /// </summary>
+        /// <param name="p">参数数组</param>
+        /// <returns></returns>
         public string Builder(params string[] p)
         {
-            return null;
-        }
-    }
+            StringBuilder sb = new StringBuilder("AT+");
+            sb.Append(Command);
 
-    /// <summary>
-    /// 设备信息类，可直接通过Json.net库进行序列化和反序列化
-    /// </summary>
-    public class DeviceInfo
-    {
-        public string ID{ get; set; }
-        public string Name { get; set; }
-        public string Model { get; set; }
+            //有参数
+            if (p.Length > 0)
+            {
+                sb.Append("=");
+                sb.Append(p[0]);
+                for (int i=1;i<p.Length;i++)
+                {
+                    sb.Append(",");
+                    sb.Append(p[i]);
+                }
+            }
+
+            return sb.ToString();
+        }
     }
 }

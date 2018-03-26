@@ -163,7 +163,7 @@
             this.mbtn.Size = new System.Drawing.Size(37, 94);
             this.mbtn.TabIndex = 3;
             this.mbtn.UseSelectable = true;
-            this.mbtn.Click += new System.EventHandler(this.mbtn_Click);
+            this.mbtn.Click += new System.EventHandler(this.Mbtn_Click);
             // 
             // sc
             // 
