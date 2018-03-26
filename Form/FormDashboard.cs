@@ -21,10 +21,8 @@ namespace ECC_client_windows.Form
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            EcciotListItem.ItemInfo info = new EcciotListItem.ItemInfo();
-            info.Name = "测试设备 - " + new Random().Next(100, 1000);
-
-            EcciotListItem item = new EcciotListItem(info);
+            EcciotListItem item = new EcciotListItem();
+            item.Device_id = "测试设备 - " + new Random().Next(100, 1000);
             ecciotListBox.AddItem(item);
         }
     }
