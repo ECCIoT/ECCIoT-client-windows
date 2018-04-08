@@ -45,6 +45,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\FormSDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormSDK.Designer.cs">
+      <DependentUpon>FormSDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormAPIKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +96,15 @@
     <Compile Include="UserControls\EcciotListItem.Designer.cs">
       <DependentUpon>EcciotListItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ListItemController\EcciotListItemController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListItemController\EcciotListItemController.Designer.cs">
+      <DependentUpon>EcciotListItemController.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\FormSDK.resx">
+      <DependentUpon>FormSDK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormAPIKey.resx">
       <DependentUpon>FormAPIKey.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +130,9 @@
     <EmbeddedResource Include="UserControls\EcciotListItem.resx">
       <DependentUpon>EcciotListItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ListItemController\EcciotListItemController.resx">
+      <DependentUpon>EcciotListItemController.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECCIoT-sdk-windows\ECCIoT-sdk-windows.csproj">
+      <Project>{90c68e13-7ecf-4d26-a5d8-11fe0b55d48b}</Project>
+      <Name>ECCIoT-sdk-windows</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

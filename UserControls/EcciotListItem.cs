@@ -86,6 +86,13 @@ namespace ECC_client_windows.UserControls
             mlabName.Text = Info.Name;
         }
 
+        public void AddControl(Control control)
+        {
+            scText.Panel2.Controls.Clear();
+            scText.Panel2.Controls.Add(control);
+            control.Dock = DockStyle.Fill;
+        }
+
         /// <summary>
         /// 控件尺寸刷新方法（被来父类的尺寸管理器调用）
         /// </summary>
@@ -141,7 +148,7 @@ namespace ECC_client_windows.UserControls
         /// </summary>
         public class ItemInfo
         {
-            public string ID { get; set; }
+            public string ItemID { get; set; }
             public string Name { get; set; }
             public string Model { get; set; }
         }

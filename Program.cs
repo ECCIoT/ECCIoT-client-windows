@@ -17,6 +17,7 @@ namespace ECC_client_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormSDK());
             Application.Run(new FormDashboard());
             Application.Run(new FormWelcome());
             Application.Run(new FormAPIKey());
